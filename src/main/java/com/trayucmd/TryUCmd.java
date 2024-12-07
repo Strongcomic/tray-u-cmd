@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalTime;
@@ -258,7 +259,19 @@ public class TryUCmd {
         try {
             String exePath = new File(TryUCmd.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getAbsolutePath();
             runCommand("reg", "add", "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", "/v", "TryUCmd", "/t", "REG_SZ", "/d", exePath, "/f");
-            log.info("Autostart enabled");
+            log.info("Autostart enabled via Registry");
+
+            String taskName = "TryUCmdTask";
+            runCommand("schtasks", "/Create",
+                "/SC", "ONLOGON",
+                "/TN", taskName,
+                "/TR", "\"" + exePath + "\"",
+                "/RL", "HIGHEST",
+                "/F");
+            log.info("Autostart enabled via Task Scheduler.");
+
+        } catch (URISyntaxException e) {
+            log.error("Invalid URI syntax: {}", e.getMessage(), e);
         } catch (Exception e) {
             log.error("Error enabling autostart: {}", e.getMessage(), e);
         }
