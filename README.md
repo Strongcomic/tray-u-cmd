@@ -22,6 +22,6 @@
 
 How it works:
 - Run via IDEA or wataver you work with, or Run via prebuilded [TrayUCmd-win32-64.exe](https://github.com/Strongcomic/tray-u-cmd/blob/main/src/main/java/bin/TrayUCmd-win32-64.exe)
-  `JAVA_HOME with SDK 21 Required"
+  `JAVA_HOME with SDK 21 Required`
 - Check it in your tray
 - Use it :)
