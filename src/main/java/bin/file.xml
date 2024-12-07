@@ -4,21 +4,21 @@
   <headerType>gui</headerType>
   <jar>D:\tray-u-cmd\build\libs\tray-u-cmd-1.0-SNAPSHOT-all.jar</jar>
   <outfile>D:\tray-u-cmd\src\main\java\bin\TrayUCmd.exe</outfile>
-  <errTitle></errTitle>
-  <cmdLine></cmdLine>
+  <errTitle/>
+  <cmdLine/>
   <chdir>.</chdir>
   <priority>normal</priority>
-  <downloadUrl></downloadUrl>
-  <supportUrl></supportUrl>
+  <downloadUrl/>
+  <supportUrl/>
   <stayAlive>false</stayAlive>
   <restartOnCrash>false</restartOnCrash>
-  <manifest></manifest>
+  <manifest/>
   <icon>D:\tray-u-cmd\src\main\resources\icon.ico</icon>
   <jre>
     <path>%JAVA_HOME%;%PATH%</path>
     <requiresJdk>false</requiresJdk>
     <requires64Bit>false</requires64Bit>
-    <minVersion></minVersion>
-    <maxVersion></maxVersion>
+    <minVersion/>
+    <maxVersion/>
   </jre>
 </launch4jConfig>
