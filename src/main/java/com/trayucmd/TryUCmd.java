@@ -257,7 +257,7 @@ public class TryUCmd {
     private static void enableAutostart() {
         try {
             String exePath = new File(TryUCmd.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getAbsolutePath();
-            runCommand("reg", "add", "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", "/v", "TryUCmd", "/t", "REG_SZ", "/d", exePath, "/f");
+            runCommand("reg", "add", "HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run", "/v", "TryUCmd", "/t", "REG_SZ", "/d", exePath, "/f");
             log.info("Autostart enabled");
         } catch (Exception e) {
             log.error("Error enabling autostart: {}", e.getMessage(), e);
